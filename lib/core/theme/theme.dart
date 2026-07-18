@@ -4,6 +4,7 @@ import 'package:spotify/core/theme/app_pallete.dart';
 
 class AppTheme {
   static OutlineInputBorder _border(Color color) => OutlineInputBorder(
+    
     borderSide: BorderSide(
       color: color,
       width: 3,
