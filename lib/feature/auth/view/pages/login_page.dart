@@ -3,22 +3,20 @@ import 'package:spotify/core/theme/app_pallete.dart';
 import 'package:spotify/feature/auth/view/widgets/auth_gradient_button.dart';
 import 'package:spotify/feature/auth/view/widgets/custom_field.dart';
 
-class SignupPage extends StatefulWidget {
-  const SignupPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<SignupPage> createState() => _SignupPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
-  final nameController = TextEditingController();
+class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
-    nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
@@ -36,7 +34,7 @@ class _SignupPageState extends State<SignupPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Sign Up.',
+                'Sign In.',
                 style: Theme.of(context).textTheme.titleMedium!.copyWith(
                   fontWeight: FontWeight.w600,
                   fontSize: 50,
@@ -44,13 +42,6 @@ class _SignupPageState extends State<SignupPage> {
               ),
               const SizedBox(
                 height: 30,
-              ),
-              CustomField(
-                controller: nameController,
-                hintText: 'Name',
-              ),
-              const SizedBox(
-                height: 15,
               ),
               CustomField(
                 controller: emailController,
@@ -68,7 +59,7 @@ class _SignupPageState extends State<SignupPage> {
                 height: 20,
               ),
               AuthGradientButton(
-                buttonText: 'Sign Up',
+                buttonText: 'Sign In',
                 onTap: () {},
               ),
               const SizedBox(
@@ -76,11 +67,11 @@ class _SignupPageState extends State<SignupPage> {
               ),
               RichText(
                 text: TextSpan(
-                  text: 'Already have an account ?',
+                  text: 'Don\'t have an account ? ',
                   style: Theme.of(context).textTheme.titleMedium,
                   children: const [
                     TextSpan(
-                      text: ' Sign In',
+                      text: ' Sign Up',
                       style: TextStyle(
                         color: Pallete.gradient2,
                         fontWeight: FontWeight.bold,
